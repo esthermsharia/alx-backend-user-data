@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Obfuscates a log message"""
 
 from typing import List
 import re
