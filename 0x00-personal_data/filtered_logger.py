@@ -64,3 +64,19 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
         database=getenv('PERSONAL_DATA_DB_NAME'))
 
     return db_connection
+
+
+def main():
+    my_db = get_db()
+    cursor = my_db.cursor()
+    cursor.execute("SELECT * FROM users;")
+    fields = [i[0] for i in cursor.description]
+
+    log = get_logger()
+
+    for row in cursor:
+        _row = ''.join(f'{f}={str(r)}; ' for r, f in zip(row, fields))
+        log.info(_row.strip())
+
+    cursor.close()
+    my_db.close()
