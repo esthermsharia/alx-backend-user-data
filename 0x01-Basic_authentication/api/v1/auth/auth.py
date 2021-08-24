@@ -6,6 +6,7 @@ from typing import List, TypeVar
 
 
 class Auth:
+    """Authorization class"""
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """Retricts app access to authorization first"""
         return False
