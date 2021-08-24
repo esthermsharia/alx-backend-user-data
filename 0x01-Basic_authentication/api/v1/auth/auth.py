@@ -1,4 +1,4 @@
-#!/Usr/bin/env python3
+#!/usr/bin/env python3
 """Module defines the authorization class"""
 
 from flask import request
