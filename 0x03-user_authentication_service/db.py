@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+\65;6003;1c#!/usr/bin/env python3
 """DB module
 """
 from sqlalchemy import create_engine
@@ -61,6 +61,6 @@ class DB:
                     if not hasattr(User, key):
                         raise ValueError
                     setattr(user, key, value)
-                self._session.commit()
+                    self._session.commit()
             except NoResultFound:
                 pass
